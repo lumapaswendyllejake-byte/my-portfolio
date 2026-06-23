@@ -1,11 +1,11 @@
 /* CSS Variables for Dark Theme */
 :root {
-    --bg-main: #0f172a;       /* Deep Slate Background */
-    --bg-surface: #1e293b;    /* Lighter Slate for Cards */
-    --text-main: #f8fafc;     /* Off-White Text */
-    --text-muted: #94a3b8;    /* Slate Gray Text */
-    --accent: #3b82f6;        /* Electric Blue Accent */
-    --accent-hover: #2563eb;  /* Darker Blue on Hover */
+    --bg-main: #0f172a;       
+    --bg-surface: #1e293b;    
+    --text-main: #f8fafc;     
+    --text-muted: #94a3b8;    
+    --accent: #3b82f6;        
+    --accent-hover: #2563eb;  
     --transition: all 0.3s ease;
 }
 
@@ -19,13 +19,14 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; 
 }
 
 body {
     background-color: var(--bg-main);
     color: var(--text-main);
     line-height: 1.6;
-    /* Background Image setup */
+    overflow-x: hidden; 
     background-image: 
         linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.90)), 
         url("images/Gradient geometric shapes on blue background _ Premium Vector.jpeg");
@@ -74,6 +75,7 @@ body {
     transition: var(--transition);
     cursor: pointer;
     border: none;
+    display: inline-block;
 }
 
 .btn-primary {
@@ -137,16 +139,18 @@ body {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    z-index: 1001; 
 }
 
-/* Hero Section (Updated for 2 columns) */
+/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 100px 10% 0; /* Extra top padding to account for fixed navbar */
+    padding: 100px 10% 0; 
     gap: 50px;
+    position: relative;
 }
 
 .hero-image {
@@ -154,14 +158,17 @@ body {
     display: flex;
     justify-content: center;
     max-width: 500px;
+    will-change: transform, opacity; 
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out; 
+    z-index: 0; 
+    position: relative;
 }
 
 .hero-image img {
     width: 100%;
     height: auto;
-    /* Adds a nice shadow to transparent PNGs to make them pop */
     filter: drop-shadow(0px 15px 25px rgba(0, 0, 0, 0.5));
-    transition: var(--transition);
+    transition: transform 0.3s ease; 
 }
 
 .hero-image img:hover {
@@ -170,6 +177,10 @@ body {
 
 .hero-content {
     flex: 1;
+    will-change: transform, opacity; 
+    transition: transform 0.1s ease-out, opacity 0.1s ease-out; 
+    z-index: 2; 
+    position: relative;
 }
 
 .greeting {
@@ -202,9 +213,128 @@ body {
 .hero-cta {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* ABOUT ME & EDUCATION SECTION */
+.about {
+    position: relative;
+    z-index: 10;
+}
+
+/* Updated for 3-column layout */
+.about-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.about-text {
+    flex: 1.2; /* Slightly wider for the text */
+    background-color: var(--bg-surface);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5); 
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.about-text strong {
+    color: var(--text-main);
+}
+
+/* Education Timeline */
+.education-section {
+    flex: 1;
+}
+
+.education-section h3 {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 30px;
+}
+
+.timeline {
+    border-left: 2px solid var(--accent);
+    padding-left: 30px;
+    margin-left: 10px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -39px; 
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.timeline-content h4 {
+    color: var(--text-main);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.timeline-year {
+    color: var(--text-muted);
+    font-family: monospace;
+    font-size: 0.95rem;
+    display: inline-block;
+    background-color: rgba(59, 130, 246, 0.1);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* NEW: About Image */
+.about-image {
+    flex: 1;
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    background-color: var(--bg-surface);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.about-image:hover img {
+    transform: scale(1.05); /* Smooth zoom effect */
 }
 
 /* Skills Section */
+.skills {
+    position: relative;
+    z-index: 10;
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -242,6 +372,11 @@ body {
 }
 
 /* Certificates Section */
+.certificates {
+    position: relative;
+    z-index: 10;
+}
+
 .cert-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -282,6 +417,7 @@ body {
     object-fit: cover; 
     object-position: top center; 
     transition: var(--transition);
+    cursor: pointer; 
 }
 
 .cert-card:hover .cert-image img {
@@ -314,9 +450,15 @@ body {
     font-size: 0.75rem;
     margin-top: 8px;
     font-family: monospace;
+    word-wrap: break-word;
 }
 
 /* Feedback Section */
+.feedback {
+    position: relative;
+    z-index: 10;
+}
+
 .feedback-container {
     display: flex;
     flex-direction: column;
@@ -379,6 +521,11 @@ body {
 }
 
 /* Contact Section */
+.contact {
+    position: relative;
+    z-index: 10;
+}
+
 .contact-links {
     display: flex;
     justify-content: center;
@@ -414,7 +561,6 @@ body {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Brand Colors */
 .facebook {
     background-color: #1877F2;
 }
@@ -455,6 +601,14 @@ body {
     z-index: 1; 
 }
 
+.github {
+    background-color: #333333;
+}
+
+.phone {
+    background-color: #10b981;
+}
+
 .contact-method h3 {
     font-size: 1.5rem;
     margin-bottom: 8px;
@@ -464,6 +618,7 @@ body {
 .contact-method p {
     color: var(--text-muted);
     font-size: 1rem;
+    word-break: break-all;
 }
 
 /* Footer */
@@ -472,6 +627,8 @@ footer {
     padding: 40px 20px;
     background-color: var(--bg-surface);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    z-index: 10;
 }
 
 footer p {
@@ -491,47 +648,174 @@ footer p {
     transform: translateY(0);
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none; 
+/* LIGHTBOX MODAL STYLING (FIXED SIZE) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    padding-top: 80px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(15, 23, 42, 0.95); 
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90vw;          
+    max-width: 900px;     
+    height: 70vh;         
+    object-fit: contain;  
+    border-radius: 8px;
+    animation: zoom 0.3s ease;
+}
+
+#modalCaption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: var(--text-muted);
+    padding: 20px 0;
+    font-size: 1.2rem;
+    animation: zoom 0.3s ease;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.9); opacity: 0;} 
+    to {transform: scale(1); opacity: 1;}
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: var(--text-muted);
+    font-size: 40px;
+    font-weight: bold;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* TABLET RESPONSIVENESS (Max 1024px) */
+@media (max-width: 1024px) {
+    .section-padding {
+        padding: 80px 5%;
     }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 150px;
+        justify-content: center;
+    }
+    
+    .hero-image {
+        order: -1; 
+        max-width: 400px;
+        margin-bottom: 30px;
+    }
+    
+    .hero-cta {
+        justify-content: center;
+    }
+    
+    .bio {
+        margin: 0 auto 40px auto;
+    }
+    
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .about-text, .education-section, .about-image {
+        width: 100%;
+    }
+    
+    .education-section {
+        margin-top: 20px;
+    }
+    
+    .about-image {
+        margin-top: 20px;
+        max-height: 400px; /* Prevents image from being too tall on tablet */
+    }
+}
+
+/* MOBILE RESPONSIVENESS (Max 768px) */
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 60px 5%;
+    }
+
     .hamburger {
         display: block;
     }
     
-    /* Adjust hero for mobile: Stack image on top of text */
-    .hero {
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
         flex-direction: column;
+        background-color: rgba(30, 41, 59, 0.98); 
+        width: 100%;
         text-align: center;
-        padding-top: 120px;
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+        padding: 30px 0;
+        gap: 20px;
+        border-bottom: 2px solid var(--accent);
     }
-    .hero-image {
-        order: -1;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-    .hero-cta {
-        justify-content: center;
-        flex-direction: column;
+
+    .nav-links.active {
+        right: 0; 
     }
     
     .btn {
+        width: 100%; 
         text-align: center;
     }
+    
+    .hero-image {
+        max-width: 280px;
+    }
+    
     .feedback-card {
         flex-direction: column;
         text-align: center;
+        padding: 20px;
     }
+    
     .feedback-image {
         margin: 0 auto;
+        width: 150px;
+        height: 150px;
     }
+    
     .contact-links {
         gap: 40px;
+        flex-direction: column;
     }
+    
     .social-circle {
-        width: 120px;
-        height: 120px;
-        font-size: 4rem;
+        width: 100px;
+        height: 100px;
+        font-size: 3.5rem;
+    }
+
+    .close-modal {
+        top: 10px;
+        right: 20px;
     }
 }

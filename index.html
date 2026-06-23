@@ -13,6 +13,7 @@
         <div class="logo">Website Portfolio</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#certificates">Certificates</a></li>
             <li><a href="#feedbacks">Feedbacks</a></li>
@@ -24,20 +25,68 @@
     </nav>
 
     <section id="home" class="hero">
-        <div class="hero-image fade-in">
+        <div class="hero-image fade-in" id="parallaxImage">
             <img src="images/IMG_20250825_215055_657-removebg-preview.png" alt="Wendylle Jake Talo Lumapas holding certificate">
         </div>
-        <div class="hero-content fade-in">
+        <div class="hero-content fade-in" id="parallaxText">
             <p class="greeting">Hi, my name is</p>
             <h1>Wendylle Jake Talo Lumapas</h1>
             <h2>3rd Year Information Systems Student</h2>
             <p class="bio">
                 This portfolio showcases my academic journey and achievements in the Bachelor of Science in Information Systems (BSIS) program. My passion lies in the intersection of technology and business, and I'm driven to leverage information systems to solve complex problems and optimize organizational processes.
-
+            </p>
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-primary">Let's Connect</a>
                 <a href="#certificates" class="btn btn-secondary">View My Work</a>
             </div>
+        </div>
+    </section>
+
+    <section id="about" class="about section-padding">
+        <h2 class="section-title fade-in">About Me & Education</h2>
+        <div class="about-container fade-in">
+            
+            <div class="about-text">
+                <h3>Who I Am</h3>
+                <p>I am a dedicated Information Systems student based in the Davao Del Norte State College, with a strong focus on building robust, scalable digital infrastructures. I specialize in bridging the gap between complex manual operations and streamlined technological solutions.</p>
+                <p>My technical foundation spans across database architecture—specifically designing intricate PostgreSQL schemas with role-based access logic—and crafting intuitive user experiences through Hybrid Design Thinking and Figma prototyping.</p>
+                <p>Currently, I am developing <strong>MetroFleet</strong>, a comprehensive digital information system designed for the Davao Metro Shuttle (DMS) context. This capstone project aims to modernize manual fleet dispatching through real-time GPS tracking, QR-based inspections, and synchronized data architecture across multiple regional branches.</p>
+            </div>
+
+            <div class="education-section">
+                <h3>Education Background</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Davao Del Norte State College</h4>
+                            <span class="timeline-year">[2023] - [2026]</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>New Leyte National High School</h4>
+                            <span class="timeline-year">[2021] - [2023]</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Panabo National High School</h4>
+                            <span class="timeline-year">[2017] - [2021]</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Salvacion Elementary School</h4>
+                            <span class="timeline-year">[2012] - [2017]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -79,6 +128,18 @@
             </div>
 
             <div class="cert-card">
+                <div class="cert-image">
+                    <img src="images/Screenshot 2026-06-23 075950.png" alt="Capstone System Project">
+                </div>
+                <div class="cert-info">
+                    <h3>Capstone System Project</h3>
+                    <span class="issuer">Davao Del Norte State College</span>
+                    <span class="date">May 12, 2026</span>
+                    <span class="cert-id">Cert ID: 0f3c1fef-3d0c-4386-b13c-5224ed767bda</span>
+                </div>
+            </div>
+
+            <div class="cert-card">
                 <div class="cert-image placeholder-img">
                     <img src="images/Screenshot 2026-06-18 065739.png" alt="CRUD Project System">
                 </div>
@@ -99,7 +160,9 @@
                     <span class="date">April 2024</span>
                 </div>
             </div>
+        </div>
     </section>
+
     <section id="feedbacks" class="feedback section-padding">
         <h2 class="section-title fade-in">Feedbacks</h2>
         <p class="section-subtitle fade-in">This page contains the feedbacks of my instructors to tell how do I do in Computer Programming.</p>
@@ -107,7 +170,7 @@
         <div class="feedback-container fade-in">
             <div class="feedback-card">
                 <div class="feedback-image">
-                    <img src="images\Screenshot 2026-06-18 070910.png" alt="Rafael Dela Pena III">
+                    <img src="images/Screenshot 2026-06-18 070910.png" alt="Rafael Dela Pena III">
                 </div>
                 <div class="feedback-content">
                     <h3>Rafael Dela Pena III</h3>
@@ -118,7 +181,7 @@
 
             <div class="feedback-card">
                 <div class="feedback-image">
-                    <img src="images\Screenshot 2026-06-18 070937.png" alt="Kres-Ann B. Oclarit">
+                    <img src="images/Screenshot 2026-06-18 070937.png" alt="Kres-Ann B. Oclarit">
                 </div>
                 <div class="feedback-content">
                     <h3>Kres-Ann B. Oclarit</h3>
@@ -131,7 +194,6 @@
 
     <section id="contact" class="contact section-padding">
         <h2 class="section-title fade-in">Contact Me</h2>
-        <section id="contact" class="contact section-padding">
         <div class="contact-links fade-in">
             <div class="contact-method">
                 <a href="#" class="social-circle facebook">
@@ -147,7 +209,6 @@
                 <h3>Instagram</h3>
                 <p>@jakelumapas.980</p>
             </div>
-            
             <div class="contact-method">
                 <a href="mailto:lumapas.wendyllejake@dnsc.edu.ph" class="social-circle email">
                     <i class="fas fa-envelope"></i>
@@ -155,18 +216,37 @@
                 <h3>Email</h3>
                 <p>lumapas.wendyllejake@dnsc.edu.ph</p>
             </div>
+            <div class="contact-method">
+                <a href="https://github.com/lumapaswendyllejake-byte/my-portfolio" target="_blank" class="social-circle github">
+                    <i class="fab fa-github"></i>
+                </a>
+                <h3>GitHub</h3>
+                <p>lumapaswendyllejake-byte</p>
+            </div>
+            <div class="contact-method">
+                <a href="tel:+639857993491" class="social-circle phone">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <h3>Phone</h3>
+                <p>+63 985 799 3491</p>
+            </div>
         </div>
-    </section>
     </section>
 
     <footer>
         <div class="social-links">
-            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/lumapaswendyllejake-byte/my-portfolio" target="_blank"><i class="fab fa-github"></i></a>
             <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:lumapas.wendyllejake@dnsc.edu.ph"><i class="fas fa-envelope"></i></a>
         </div>
         <p>&copy; 2026 Wendylle Jake Talo Lumapas. Built with HTML, CSS & JS.</p>
     </footer>
+
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>
